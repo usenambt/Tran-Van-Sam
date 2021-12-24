@@ -1,0 +1,31 @@
+create database classsicmodels;
+use  classsicmodels;
+create table customers(
+customersname varchar(100),
+phone varchar(10),
+city varchar(100),
+country varchar(100)
+);
+insert into customers
+values('Tran Sam',0915010414,'Da Nang','Viet Nam');
+select * from customers;
+insert into customers
+values
+('Tran Quy',0915010414,'Da Nang','Viet Nam'),
+('Tran Dan',0935475123,'Da Nang','Viet Nam');
+select * from customers;
+update customers
+set phone=0942124567
+where customersname ='Tran Thanh Binh';
+select * from customers;
+insert into customers
+values
+('Tran Thanh Khanh Han',0913212451,'Ha Noi','Viet Nam'),
+('Tran Thanh Tung',0921412415,'Sai Gon','Viet Nam');
+
+select * from customers where city in ('Da Nang','Ha Noi', 'Sai Gon');
+ alter table customers
+ add planet varchar(50);
+ alter table customers
+ drop column planet;
+ select * from customers;
