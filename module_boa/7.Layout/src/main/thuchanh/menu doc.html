@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tao menu doc</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #menu ul{
+            list-style-type: none;
+            width: 150px;
+            background-color: black;
+            color: white;
+            font-size: 22px;
+        }
+        #menu ul li{
+            position: relative;
+            margin: 5px;
+        }
+        #menu ul ul{
+            position: absolute;
+            top:0;
+            left: 140px;
+            visibility: hidden;
+        }
+        #menu li:hover{
+            background-color: red;
+        }
+        #menu ul li:hover ul{
+            visibility: visible;
+        }
+
+    </style>
+</head>
+<body>
+<div id="menu">
+    <ul>
+        <li>
+            Sem1
+            <ul>
+                <li>Computing</li>
+                <li>C</li>
+                <li>Building</li>
+                <li>MS Transact</li>
+                <li>Project</li>
+            </ul>
+        </li>
+        <li>
+            Sem2
+            <ul>
+                <li>Cloud</li>
+                <li>Java</li>
+                <li>Python</li>
+            </ul>
+        </li>
+        <li>Sem3</li>
+        <li>Sem4</li>
+    </ul>
+</div>
+</body>
+</html>

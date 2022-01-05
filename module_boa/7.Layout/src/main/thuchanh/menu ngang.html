@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tao menu ngang</title>
+    <style>
+
+
+        #menu ul {
+            list-style-type: none;
+        }
+
+        #menu ul li {
+            position: relative;
+            width: 100px;
+            display: inline-block;
+            text-align: center;
+            background-color: black;
+            color: white;
+        }
+        #menu li:hover{
+            background-color: red;
+            cursor: pointer;
+        }
+        #menu ul ul{
+            position: absolute;
+            visibility: hidden;
+        }
+        #menu li:hover ul{
+            visibility: visible;
+        }
+
+
+    </style>
+</head>
+<body>
+<div id="menu">
+    <ul>
+        <li>
+            loooo
+            <ul>
+                <li>Pascal</li>
+                <li>Java</li>
+            </ul>
+        </li>
+        <li>
+            hhhhh
+            <ul>
+                <li>Web</li>
+                <li>Database</li>
+            </ul>
+        </li>
+        <li>
+            ao000
+            <ul>
+                <li>HTML</li>
+                <li>Javascript</li>
+            </ul>
+        </li>
+        <li>
+            ao4
+        </li>
+    </ul>
+
+</div>
+</body>
+</html>

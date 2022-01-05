@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Layout with Flex</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <style>
+        body{
+            width: 70%;
+            margin: auto;
+            font-family: 'Roboto';font-size: 18px;
+        }
+        #header{
+            display: flex;
+            background-color: black;
+            color: white;
+        }
+
+        .logo, .menu,.login,.nav,.content,.aside, #footer{
+            border: 1px solid black;
+            font-size: 22px;
+        }
+
+        .logo{
+            width: 10%;
+
+        }
+        .menu{
+            width: 80%;
+        }
+        .menu  ul{
+            list-style-type: none;
+            display: flex;
+        }
+
+        ul li{
+            margin:0 20px;
+        }
+        .menu ul a{
+            text-decoration: none;
+            color: white;
+        }
+
+
+        .login{
+            width: 10%;
+
+        }
+        #main{
+            display: flex;
+        }
+        .nav{
+            width: 20%;
+        }
+        .nav ul{
+            list-style-type: none;
+        }
+        .content{
+            width: 60%;
+        }
+        .aside{
+            width: 20%;
+        }
+        #footer{
+            text-align: center;
+        }
+        @media screen and (max-width: 768px) {
+            .content{
+                width: 80%;
+            }
+            .aside{
+                display: none;
+            }
+            #header{
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+<div id="header">
+    <div class="logo">
+        <h3>Logo</h3>
+    </div>
+    <div class="menu">
+        <ul>
+            <a href=""><li>Home</li></a>
+            <a href=""><li>About</li></a>
+            <a href=""><li>Projects</li></a>
+            <a href=""><li>Contact</li></a>
+        </ul>
+    </div>
+    <div class="login">
+        <h3>Login</h3>
+    </div>
+</div>
+<div id="main">
+    <div class="nav">
+        <ul>
+            <a href=""><li>Link</li></a>
+            <a href=""><li>Link</li></a>
+            <a href=""><li>Link</li></a>
+        </ul>
+    </div>
+    <div class="content">
+        <div>
+            <h2>Welcome</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid corporis deserunt dicta, ex inventore
+                labore, magni maiores molestiae molestias nemo nesciunt pariatur quasi repellat sequi suscipit tenetur ullam
+                vitae voluptatem?</p>
+
+        </div>
+        <hr style="width: 95%">
+        <div>
+            <h2>Test</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At cum, dignissimos est fuga illo iure labore
+                minus natus nobis quam quibusdam repellat voluptatem? Accusamus accusantium fuga illo illum perspiciatis
+                porro.</p>
+        </div>
+    </div>
+    <div class="aside">
+        aside
+    </div>
+</div>
+<div id="footer">
+    &copy;Codegym
+</div>
+</body>
+</html>
