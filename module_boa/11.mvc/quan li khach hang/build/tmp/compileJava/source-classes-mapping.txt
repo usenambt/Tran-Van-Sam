@@ -1,6 +1,6 @@
 model/Customer.java
  model.Customer
-controller/CustomerServlet.java
- controller.CustomerServlet
 dao/CustomerDao.java
  dao.CustomerDao
+controller/CustomerServlet.java
+ controller.CustomerServlet
