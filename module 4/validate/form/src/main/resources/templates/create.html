@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head th:insert="layout::head">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+    <h3>Tao moi User</h3>
+    <form action="/user/save" method="post" th:object="${user}">
+        <div class="form-group">
+            <label for="">FirstName</label>
+            <input type="text" class="form-control" th:field="*{firstName}" >
+            <p th:if = "${#fields.hasErrors('firstName')}" th:errors = "*{firstName}"></p>
+
+            <label class="form-group" for="">LastName</label>
+            <input type="text" class="form-control" th:field="*{lastName}" >
+            <p th:if = "${#fields.hasErrors('lastName')}" th:errors = "*{lastName}"></p>
+
+            <label class="form-group" for="">PhoneNumber</label>
+            <input type="text" class="form-control" th:field="*{phoneNumber}" >
+            <p th:if = "${#fields.hasErrors('phoneNumber')}" th:errors = "*{phoneNumber}"></p>
+
+            <label class="form-group" for="">Age</label>
+            <input type="text" class="form-control" th:field="*{age}" >
+            <p th:if = "${#fields.hasErrors('age')}" th:errors = "*{age}"></p>
+
+            <label class="form-group" for="">Email</label>
+            <input type="text" class="form-control" th:field="*{email}" >
+            <p th:if = "${#fields.hasErrors('email')}" th:errors = "*{email}"></p>
+
+        </div>
+        <button type="submit" class="btn btn-success"><i class="fa fa-floppy-o"></i>&nbsp;Save</button>
+    </form>
+
+</div>
+</body>
+</html>
