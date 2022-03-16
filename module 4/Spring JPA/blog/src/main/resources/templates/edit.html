@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head th:insert="layout::head">
+    <meta charset="UTF-8">
+    <title>Chinh sua tin tuc</title>
+</head>
+<body>
+<div class="container">
+    <h3>Chinh sua tin tuc</h3>
+    <a href="/news/">Danh sach tin tuc</a>
+    <form action="/news/update" method="post" th:object="${news}">
+        <div class="form-group">
+            <input type="hidden" th:field="*{id}">
+            <label for="">Tieu de</label>
+            <input type="text" class="form-control" th:field="*{header}">
+            <label for="">Noi dung</label>
+            <textarea rows="10" class="form-control" th:field="*{content}"></textarea>
+            <label for="">Category</label>
+            <select name="" id="" class="custom-select" th:field="*{category}">
+                <option value="" th:each="categorylist:${categoryList}" th:text="${categorylist.name}"
+                        th:value="${categorylist.id}"></option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-success"><i class="fa fa-floppy-o"></i> &nbsp;Update</button>
+    </form>
+</div>
+</body>
+</html>

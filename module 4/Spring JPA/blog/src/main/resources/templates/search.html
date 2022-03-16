@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head th:insert="layout::head">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+    <h3>Danh sach tim kiem tin tuc</h3>
+    <a href="/news">Danh sach tin tuc</a>
+    <form action="/news/search" method="get">
+        <input type="text" name="value">
+        <button type="submit" class="btn btn-info">Tim kiem</button>
+    </form>
+    <table class="table">
+        <tr th:each="newssearch:${newsSearch}">
+            <td th:text="${newssearch.getId()}"></td>
+            <td th:text="${newssearch.getHeader()}"></td>
+            <td><a th:href="@{/news/edit/{id} (id=${newssearch.getId()})}"><button class="btn btn-info"><i class="fa fa-edit"></i> Edit</button></a></td>
+            <td><a th:href="@{/news/delete/{id} (id=${newssearch.getId()})}"><button class="btn btn-danger"><i class="fa fa-trash"></i> &nbsp; Delete</button></a></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

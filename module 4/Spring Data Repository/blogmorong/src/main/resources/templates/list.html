@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head th:insert="layout::head">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div class="container">
+    <header th:insert="header::header"></header>
+    <h3>Danh sach tin tuc</h3>
+    <a href="/news/create">Them moi tin tuc</a>
+    <form action="/news/search" method="get">
+        <input type="text" name="value">
+        <button type="submit" class="btn btn-info">Tim kiem</button>
+
+        <select name="" id="" onchange="this.form.submit()" th:name="idcategory">
+            <option value="" th:each="categorylist:${categoryList}" th:text="${categorylist.name}" th:value="${categorylist.id}" ></option>
+        </select>
+    </form>
+
+    <p th:text="${msg}"></p>
+    <table class="table">
+        <tr th:each="newslist:${newsList}">
+            <td th:text="${newslist.getId()}"></td>
+            <td th:text="${newslist.getHeader()}"></td>
+            <td th:text="${newslist.category.name}"></td>
+
+
+            <td><a th:href="@{/news/detail/{id} (id=${newslist.getId()})}"><button class="btn btn-info"><i class="fa fa-edit"></i> Detail</button></a></td>
+            <td><a th:href="@{/news/edit/{id} (id=${newslist.getId()})}"><button class="btn btn-info"><i class="fa fa-edit"></i> Edit</button></a></td>
+            <td><a th:href="@{/news/delete/{id} (id=${newslist.getId()})}"><button class="btn btn-danger"><i class="fa fa-trash"></i> &nbsp; Delete</button></a></td>
+        </tr>
+    </table>
+    <span>
+        <a th:if="${newsList.hasPrevious()}" th:href="@{/news/list (page=${newsList.number}-1)}">
+            Previous
+        </a>
+    </span>
+    <span th:each="abc:${#numbers.sequence(0,newsList.totalPages - 1)}">
+        <a th:href="@{/news/list (page=${abc})}" th:text="${abc}"></a>
+    </span>
+    <span>
+        <a th:if="${newsList.hasNext()}" th:href="@{/news/list (page=${newsList.number}+1)}">
+            Next
+        </a>
+    </span>
+</div>
+</body>
+</html>
