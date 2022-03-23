@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+    <p id="danhsach"></p>
+    <div style="display: flex;justify-content: flex-end; align-items: center">
+        <div>
+            <label style="margin: 0px;">Tìm kiếm bài viết</label>
+        </div>
+        <div style="margin: 20px">
+            <input id="value" type="text">
+        </div>
+        <div>
+            <button class="btn btn-info" onClick="searchNews()">Search</button>
+        </div>
+    </div>
+    <p id="news"></p>
+    <p id="size" hidden></p>
+    <div style="display: flex;justify-content:flex-end ">
+        <span id="return"></span>
+        <span id="loadmore"></span>
+
+    </div>
+
+</div>
+
+
+<script>
+    function showDetailNews(id) {
+        console.log(id)
+        $.ajax({
+            type: 'get',
+            url: 'news/' + id,
+            success: function (news) {
+                var myString = '<div style="font-weight: bold">' + news.header + '</div>' + '<div>' + news.synopsis + '</div>'
+                    + '<div>' + news.content + '</div>'
+                $('#news').html(myString);
+                $('#loadmore').html("")
+                $('#return').html('<button class="btn btn-info" onclick="showNews(2)">Trở về danh sach</button>')
+            }
+        })
+    }
+
+    function searchNews() {
+        $.ajax({
+            type: 'get',
+            url: 'news/search/' + $('#value').val(),
+            success: function (listNewSearch) {
+
+                console.log(listNewSearch.length)
+
+                var myString = '<div>'
+                for (i = 0; i < listNewSearch.length; i++) {
+                    myString += '<div style="margin: 20px;display: flex; justify-content: space-between"> <div style="display: flex;align-items: center; margin-right: 20px">' + '<img src="" alt="" style="width: 150px;height: 150px">' + '</div>' + '<div> <div style="font-weight: bold">' + listNewSearch[i].header + '</div>' + '<div>' + listNewSearch[i].synopsis + '<span onclick="showDetailNews(' + listNewSearch[i].id + ')">...</span>' +'</div> </div> </div>'
+                }
+                myString = myString + '</div>'
+                console.log(myString)
+                $('#news').html(myString);
+                $('#loadmore').html("")
+                $('#return').html('<button class="btn btn-info" onclick="showNews(2)">Trở về danh sach</button>')
+            }
+        })
+    }
+
+    function showNews(loadsize) {
+        $('#value').val("");
+        $.ajax({
+            type: 'get',
+            url: 'news/list',
+            dataType: 'json',
+            success: function (listNews) {
+                var myString = '<div>'
+                for (i = 0; i < loadsize; i++) {
+                    myString += '<div style="margin: 20px;display: flex; justify-content: space-between"> <div style="display: flex;align-items: center; margin-right: 20px">' + '<img src="" alt="" style="width: 150px;height: 150px">' + '</div>' + '<div> <div style="font-weight: bold">' + listNews[i].header + '</div>' + '<div>' + listNews[i].synopsis + '<span onclick="showDetailNews(' + listNews[i].id + ')">...</span>' + '</div> </div> </div>'
+                }
+                myString = myString + '</div>'
+                console.log(myString)
+                $('#news').html(myString);
+                $('#size').html(parseInt(loadsize) + 1);
+                if(loadsize!=listNews.length){
+                    $('#loadmore').html(" <button class=\"btn btn-info\" onclick=\"showNews(document.getElementById('size').innerHTML)\">Load more</button>");
+                } else {
+                    $('#loadmore').html("")
+                }
+                $('#return').html("")
+
+            }
+        })
+    }
+
+    window.onload = function () {
+        showNews(2);
+    }
+</script>
+</body>
+</html>
