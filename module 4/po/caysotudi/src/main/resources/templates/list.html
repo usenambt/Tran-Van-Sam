@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <title>Danh sach khach hang</title>
+</head>
+<body>
+<div class="container">
+    <h3>Danh sach khach hang</h3>
+    <form action="/customer/search" method="get">
+        <div class="row">
+            <div class="col-sm-12 col-md-6 col-lg-1">
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-1">
+                <label for="">Ten</label>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-2">
+                <input class="form-control" type="text" name="namecustomer" th:value="${namecustomer}">
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-1">
+                <label for="">Phone</label>
+            </div>
+
+            <div class="col-sm-12 col-md-6 col-lg-2">
+
+                <input class="form-control" type="text" name="phonecustomer" th:value="${customerphone}">
+            </div>
+
+            <div class="col-sm-12 col-md-6 col-lg-1">
+                <label for="">Loai KH</label>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-2">
+                <select class="form-control" th:name="idcustomertype" id="">
+                    <option value="">Chon loai KH</option>
+                    <option th:if="${customertypelist.customerTypeId}==${idcustomertype}" selected  th:each="customertypelist:${customerTypeList}"
+                            th:text="${customertypelist.customerTypeName}"
+                            th:value="${customertypelist.customerTypeId}">
+                    </option>
+                    <option th:unless="${customertypelist.customerTypeId}==${idcustomertype}"  th:each="customertypelist:${customerTypeList}"
+                            th:text="${customertypelist.customerTypeName}"
+                            th:value="${customertypelist.customerTypeId}">
+                    </option>
+                </select>
+            </div>
+
+            <form action="/news/search" method="get">
+                <input type="text" name="value">
+                <button type="submit" class="btn btn-info">Tim kiem</button>
+            </form>
+
+        </div>
+    </form>
+
+    <a href="/customer/create">Them moi khach hang</a>
+    <div class="table-responsive-md">
+        <table class="table table-bordered">
+            <thead style="background: aqua">
+            <th>ID</th>
+            <th>Name</th>
+            <th>Birthday</th>
+            <th>Gender</th>
+            <th>Idcard</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Type</th>
+            <th colspan="3">Action</th>
+            </thead>
+            <tbody>
+            <!--        Hien thi di lieu mac dinh-->
+            <tr  th:if="${customerList}" th:each="customerlist:${customerList}">
+                <td th:text="${customerlist.customerId}"></td>
+                <td th:text="${customerlist.customerName}"></td>
+                <td th:text="${#temporals.format(customerlist.customerBirthday, 'dd-MM-yyyy')}"></td>
+                <td th:text="${customerlist.gender.genderName}"></td>
+                <td th:text="${customerlist.customerIdCard}"></td>
+                <td th:text="${customerlist.customerPhone}"></td>
+                <td th:text="${customerlist.customerEmail}"></td>
+                <td th:text="${customerlist.customerAddress}"></td>
+                <td th:text="${customerlist.customerType.customerTypeName}"></td>
+                <td><button class="btn btn-success" data-toggle="modal" data-target="#detailModal" th:onclick="'detailEmployee('+${customerlist.customerId}+')'">Detail</button></td>
+                <td><a th:href="@{/customer/edit/{customerId} (customerId=${customerlist.customerId})}"><button class="btn btn-info">Edit</button></a></td>
+                <td><button class="btn btn-danger" data-toggle="modal" data-target="#abc" th:onclick="prepareDelete([[${customerlist.customerId}]],[[${customerlist.customerName}]])">Delete</button></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <div th:replace="fragments::head"></div>
+    <title>Tao moi khach hang</title>
+</head>
+<body>
+<div class="container">
+    <div th:insert="fragments::header"></div>
+    <h3>Tao moi khach hang</h3>
+    <form action="/customer/save" method="post" th:object="${customer}">
+        <div class="row">
+            <div class="col-md-6">
+                <p>Ho va ten</p>
+                <input class="form-control" type="text" th:field="*{customerName}">
+            </div>
+            <div class="col-md-6">
+                <p>Ngay sinh</p>
+                <input class="form-control" type="text" placeholder="dd/mm/yyyy" id="customerbirthday" th:field="*{customerBirthday}">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <p>Gioi tinh</p>
+                <select class="form-control" name="" id="" th:field="*{gender}">
+                    <option value="" th:each="genderlist:${genderList}"
+                            th:text="${genderlist.genderName}"
+                            th:value="${genderlist.genderId}"></option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <p>So CMND</p>
+                <input class="form-control" type="text" th:field="*{customerIdCard}">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <p>Dien thoai</p>
+                <input class="form-control" type="text" th:field="*{customerPhone}">
+            </div>
+            <div class="col-md-6">
+                <p>Email</p>
+                <input class="form-control" type="text" th:field="*{customerEmail}">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <p>Dia chi</p>
+                <input class="form-control" type="text" th:field="*{customerAddress}">
+            </div>
+            <div class="col-md-6">
+                <p>Loai khach hang</p>
+                <select class="form-control" name="" id="" th:field="*{customerType}">
+                    <option value="" th:each="customertypelist:${customerTypeList}"
+                            th:text="${customertypelist.customerTypeName}"
+                            th:value="${customertypelist.customerTypeId}"></option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-2"></div>
+            <div class="col-md-2"></div>
+            <div class="col-md-2"></div>
+            <div class="col-md-2">
+                <p></p>
+                <button style="width: 100%;" class="btn btn-primary" type="submit"><i class="fa fa-floppy-o"></i> &nbsp;
+                    Save
+                </button>
+            </div>
+            <div class="col-md-2">
+                <p></p>
+                <a href="/customer/">
+                    <button style="width: 100%;" class="btn btn-success" type="button">Cancel</button>
+                </a>
+            </div>
+        </div>
+
+    </form>
+</div>
+</body>
+<script>
+    $(document).ready(function () {
+        $('#customerbirthday').datepicker({
+            dateFormat: 'dd/mm/yy',		// Date Format "dd/mm/yy"
+            changeMonth: true,
+            changeYear: true,
+            yearRange: "-100:+0"
+        });
+    });
+</script>
+</html>

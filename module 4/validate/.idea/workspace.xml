@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e48b9ef3-b4a9-4c67-93e4-1bcd1fe4c9ef" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../po/AOP/.idea/AOP.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../po/caysotudi/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../po/caysotudi/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../po/caysotudi/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../po/caysotudi/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../po/caysotudi/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../po/caysotudi/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../po/caysotudi/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../po/caysotudi/src/main/java/com/example/caysotudi/CaysotudiApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../po/caysotudi/src/main/java/com/example/caysotudi/ServletInitializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../po/caysotudi/src/main/java/com/example/caysotudi/model/AttachService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../po/caysotudi/src/main/java/com/example/caysotudi/model/Contract.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../po/caysotudi/src/main/java/com/example/caysotudi/model/ContractDetail.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../po/caysotudi/src/main/java/com/example/caysotudi/model/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../po/caysotudi/src/main/java/com/example/caysotudi/model/CustomerType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../po/caysotudi/src/main/java/com/example/caysotudi/model/Gender.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../po/caysotudi/src/main/java/com/example/caysotudi/model/RentType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../po/caysotudi/src/main/java/com/example/caysotudi/model/Service.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../po/caysotudi/src/main/java/com/example/caysotudi/model/ServiceType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../po/caysotudi/src/main/java/com/example/caysotudi/model/StandardRoom.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../po/caysotudi/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../po/caysotudi/src/test/java/com/example/caysotudi/CaysotudiApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../po/demo/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../po/demo/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../po/demo/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../po/demo/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../po/demo/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../po/demo/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../po/demo/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../po/demo/src/main/java/com/example/demo/Controller/NewsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../po/demo/src/main/java/com/example/demo/DemoApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../po/demo/src/main/java/com/example/demo/ServletInitializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../po/demo/src/main/java/com/example/demo/model/Category.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../po/demo/src/main/java/com/example/demo/model/News.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../po/demo/src/main/java/com/example/demo/repository/CategoryRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../po/demo/src/main/java/com/example/demo/repository/NewsRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../po/demo/src/main/java/com/example/demo/service/CategoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../po/demo/src/main/java/com/example/demo/service/CategoryServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../po/demo/src/main/java/com/example/demo/service/NewsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../po/demo/src/main/java/com/example/demo/service/NewsServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../po/demo/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../po/demo/src/main/resources/templates/create.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../po/demo/src/main/resources/templates/delete.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../po/demo/src/main/resources/templates/detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../po/demo/src/main/resources/templates/edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../po/demo/src/main/resources/templates/header.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../po/demo/src/main/resources/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../po/demo/src/main/resources/templates/layout.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../po/demo/src/main/resources/templates/list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../po/demo/src/main/resources/templates/search.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../po/demo/src/main/resources/templates/search1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../po/demo/src/test/java/com/example/demo/DemoApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AJAX/phonemanager/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../AJAX/phonemanager/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AJAX/phonemanager/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../AJAX/phonemanager/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AOP/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AOP/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AOP/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AOP/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AOP/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AOP/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AOP/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AOP/src/main/java/com/example/validateeeee/ServletInitializer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AOP/src/main/java/com/example/validateeeee/ValidateeeeeApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AOP/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AOP/src/test/java/com/example/validateeeee/ValidateeeeeApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Spring Data Repository/blogmorong/src/main/java/com/example/demo/Controller/NewsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Spring Data Repository/blogmorong/src/main/java/com/example/demo/Controller/NewsController.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="C:\Program Files\JetBrains\IntelliJ IDEA 2020.2.4\plugins\maven\lib\maven3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="27679NeNpahiuz3f5QcWBFihGLm" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e48b9ef3-b4a9-4c67-93e4-1bcd1fe4c9ef" name="Default Changelist" comment="" />
+      <created>1648628529765</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1648628529765</updated>
+      <workItem from="1648628530921" duration="15000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

@@ -1,0 +1,44 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <style>
+
+        span{
+            font-weight: bold;
+        }
+    </style>
+</head>
+<html lang="en">
+<div>
+    <div style="text-align: center">
+        <img src="" alt="" style="width: 100px;height: 100px">
+    </div>
+    <div>
+        <span>ID: </span>
+        <span th:text="${customer.customerId}"></span>
+        <br>
+        <span>Name: </span>
+        <span th:text="${customer.customerName}"></span>
+        <br>
+        <span>Birthday:</span>
+        <span th:text="${#temporals.format(customer.customerBirthday, 'dd-MM-yyyy')}"></span>
+        <br>
+        <span>Gender:</span>
+        <span th:text="${customer.gender.genderName}"></span>
+        <br>
+        <span>ID Card:</span>
+        <span th:text="${customer.customerIdCard}"></span>
+        <br>
+        <span>Phone:</span>
+        <span th:text="${customer.customerPhone}"></span>
+        <br>
+        <span>Email:</span>
+        <span th:text="${customer.customerEmail}"></span>
+        <br>
+        <span>Address:</span>
+        <span th:text="${customer.customerAddress}"></span>
+        <br>
+        <span>Customer Type:</span>
+        <span th:text="${customer.customerType.customerTypeName}"></span>
+    </div>
+</div>
+</html>

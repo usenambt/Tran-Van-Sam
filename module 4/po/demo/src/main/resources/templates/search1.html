@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr th:if="${idCatelorySearchList}" th:each="idcatelorysearchlist:${idCatelorySearchList}">
+        <td th:text="${idcatelorysearchlist.getId()}"></td>
+        <td th:text="${idcatelorysearchlist.getHeader()}"></td>
+        <td><a th:href="@{/news/edit/{id} (id=${idcatelorysearchlist.getId()})}"><button class="btn btn-info"><i class="fa fa-edit"></i> Edit</button></a></td>
+        <td><a th:href="@{/news/delete/{id} (id=${idcatelorysearchlist.getId()})}"><button class="btn btn-danger"><i class="fa fa-trash"></i> &nbsp; Delete</button></a></td>
+    </tr>
+</table>
+</body>
+</html>

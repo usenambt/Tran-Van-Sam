@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="62954a00-a368-4062-ad3a-9b3c91c810b2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../AOP/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../AOP/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../AOP/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../AOP/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../AOP/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../AOP/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../AOP/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../AOP/src/main/java/com/example/validateeeee/ServletInitializer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../AOP/src/main/java/com/example/validateeeee/ValidateeeeeApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../AOP/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../AOP/src/test/java/com/example/validateeeee/ValidateeeeeApplicationTests.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="C:\Program Files\JetBrains\IntelliJ IDEA 2020.2.4\plugins\maven\lib\maven3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="26mky36Qt05izJ8D1B3ZOGkYxUU" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="show.unlinked.gradle.project.popup" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration name="ValidateeeeeApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="demo.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.validateeeee.ValidateeeeeApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="62954a00-a368-4062-ad3a-9b3c91c810b2" name="Default Changelist" comment="" />
+      <created>1648036399442</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1648036399442</updated>
+      <workItem from="1648036400588" duration="75000" />
+      <workItem from="1648036500673" duration="4000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

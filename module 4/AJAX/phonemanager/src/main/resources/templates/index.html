@@ -1,10 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-<p>Viết cái chi cũng được</p>
+<script>
+function showNews(loadsize) {
+$('#value').val("");
+$.ajax({
+type: 'get',
+url: 'news/list',
+dataType: 'json',
+ success: function (listNews) {
+var myString = '<div>'
+    for (i = 0; i < loadsize; i++) {
+    myString += '<div style="margin: 20px;display: flex; justify-content: space-between"> <div style="display: flex;align-items: center; margin-right: 20px">' + '<img src="" alt="" style="width: 150px;height: 150px">' + '</div>' + '<div> <div style="font-weight: bold">' + listNews[i].header + '</div>' + '<div>' + listNews[i].synopsis + '<span onclick="showDetailNews(' + listNews[i].id + ')">...</span>' + '</div> </div> </div>'
+    }
+    myString = myString + '</div>'
+console.log(myString)
+$('#news').html(myString);
+$('#size').html(parseInt(loadsize) + 1);
+if(loadsize!=listNews.length){
+$('#loadmore').html(" <button class=\"btn btn-info\" onclick=\"showNews(document.getElementById('size').innerHTML)\">Load more</button>");
+} else {
+$('#loadmore').html("")
+}
+$('#return').html("")
+
+}
+})
+}
+window.onload = function () {
+showNews(2);
+}
+</script>
 </body>
 </html>

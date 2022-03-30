@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head th:insert="layout::head">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+    <h3>Danh sach tim kiem tin tuc</h3>
+    <a href="/news/list">Danh sach tin tuc</a>
+    <form action="/news/search" method="get">
+        <input type="text" name="value">
+        <button type="submit" class="btn btn-info">Tim kiem</button>
+    </form>
+    <table class="table">
+
+        <tr th:if="${newsSearch}" th:each="newssearch:${newsSearch}">
+            <td th:text="${newssearch.getId()}"></td>
+            <td th:text="${newssearch.getHeader()}"></td>
+            <td><a th:href="@{/news/edit/{id} (id=${newssearch.getId()})}"><button class="btn btn-info"><i class="fa fa-edit"></i> Edit</button></a></td>
+            <td><a th:href="@{/news/delete/{id} (id=${newssearch.getId()})}"><button class="btn btn-danger"><i class="fa fa-trash"></i> &nbsp; Delete</button></a></td>
+        </tr>
+
+
+
+    </table>
+    <span>
+        <a th:if="${newsSearch.hasPrevious()}" th:href="@{/news/search (page=${newsSearch.number}-1,value=${value})}">
+            Previous
+        </a>
+    </span>
+    <span th:each="abc:${#numbers.sequence(0,newsSearch.totalPages - 1)}">
+        <a th:if="${newsSearch.totalPages}" th:href="@{/news/search (page=${abc},value=${value})}" th:text="${abc}"></a>
+    </span>
+    <span>
+        <a th:if="${newsSearch.hasNext()}" th:href="@{/news/search (page=${newsSearch.number}+1,value=${value})}">
+            Next
+        </a>
+    </span>
+</div>
+</body>
+</html>

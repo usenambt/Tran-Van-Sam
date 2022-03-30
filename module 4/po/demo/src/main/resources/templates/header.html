@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+
+<body>
+<header th:fragment="header">
+    <div id="header" class="" style="display: flex; justify-content: space-between;background-color: lightsteelblue">
+        <div class="logo col-sm-9">
+            <img src="/images/logo.jpg" alt="logo">
+        </div>
+        <div class="name col-sm-3">
+            <h3>BLOG</h3>
+        </div>
+    </div>
+    <div id="nav" class="row">
+        <div class="menu col-sm-8">
+            <ul>
+                <a href="">
+                    <li>Home</li>
+                </a>
+                <a href="/employee">
+                    <li>Employee</li>
+                </a>
+                <a href="/customer">
+                    <li>Customer</li>
+                </a>
+                <a href="/service">
+                    <li>Service</li>
+                </a>
+                <a href="/contract">
+                    <li>Contract</li>
+                </a>
+
+            </ul>
+        </div>
+        <div class="input_icon col-sm-4">
+            <input type="text" id="search" placeholder="search">
+            <i class="icon fa fa-search"></i>
+        </div>
+    </div>
+</header>
+</body>
+</html>

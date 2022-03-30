@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head th:insert="layout::head">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<header th:insert="header::header"></header>
+<div class="container">
+    <div th:each="newslist:${newsList}">
+        <a th:href="@{/news/detail/{id} (id=${newslist.getId()})}">
+            <div class="news" style="height: 150px">
+
+                <div class="image" style="width: 20%;">
+                    <img src="" alt="" style="height: 80%;width: 80%;">
+                </div>
+
+                <div style="width: 80%">
+                    <p th:text="${newslist.header}" style="font-weight: bold"></p>
+                    <p th:text="${newslist.content}"></p>
+                </div>
+
+            </div>
+        </a>
+    </div>
+</div>
+</body>
+</html>
