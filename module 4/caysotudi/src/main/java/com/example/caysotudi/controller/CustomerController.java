@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.Optional;
 
 @Controller
-@RequestMapping("customer")
+@RequestMapping("/customer")
 public class CustomerController {
     @Autowired
     private CustomerService customerService;
@@ -25,7 +25,7 @@ public class CustomerController {
     @GetMapping("")
     public String listCustomer(@RequestParam(value = "page", defaultValue = "0") int page, Model model) {
         model.addAttribute("customerTypeList", customerTypeService.selectAllCustomerType());
-        model.addAttribute("customerList", customerService.selectAllCustomer(PageRequest.of(page, 2)));
+        model.addAttribute("customerList", customerService.selectAllCustomer(PageRequest.of(page, 5)));
         return "list";
     }
     @GetMapping("create")
@@ -33,7 +33,7 @@ public class CustomerController {
         model.addAttribute("customer", new Customer());
         model.addAttribute("genderList",genderService.selectAllGender());
         model.addAttribute("customerTypeList", customerTypeService.selectAllCustomerType());
-        return "customer/create";
+        return "create";
     }
     @PostMapping("save")
     public String saveCustomer(Customer customer){
@@ -44,7 +44,7 @@ public class CustomerController {
     @GetMapping("detail/{customerId}")
     public String detailCustomer(@PathVariable int customerId,Model model){
         model.addAttribute("customer", customerService.findCustomerById(customerId));
-        return "customer/detail";
+        return "detail";
     }
 
     @GetMapping("edit/{customerId}")
@@ -55,7 +55,7 @@ public class CustomerController {
         model.addAttribute("customer", customerService.findCustomerById(customerId));
         model.addAttribute("genderList",genderService.selectAllGender());
         model.addAttribute("customerTypeList", customerTypeService.selectAllCustomerType());
-        return "customer/edit";
+        return "edit";
     }
     @PostMapping("update")
     public String updateCustomer(Customer customer,@RequestParam String url){
@@ -77,11 +77,11 @@ public class CustomerController {
         model.addAttribute("idcustomertype",idcustomertype.orElse(null));
         model.addAttribute("customerTypeList", customerTypeService.selectAllCustomerType());
         if (idcustomertype.isPresent()){
-            model.addAttribute("customerListSearch", customerService.findByCustomerNameContainingAndCustomerPhoneContainingAndCustomerType_CustomerTypeId(PageRequest.of(page,2),namecustomer,phonecustomer,idcustomertype));
+            model.addAttribute("customerListSearch", customerService.findByCustomerNameContainingAndCustomerPhoneContainingAndCustomerType_CustomerTypeId(PageRequest.of(page,5),namecustomer,phonecustomer,idcustomertype));
         } else {
-            model.addAttribute("customerListSearch", customerService.findByCustomerNameContainingAndCustomerPhoneContaining(PageRequest.of(page,2),namecustomer,phonecustomer));
+            model.addAttribute("customerListSearch", customerService.findByCustomerNameContainingAndCustomerPhoneContaining(PageRequest.of(page,5),namecustomer,phonecustomer));
         }
-        return "customer/list";
+        return "list";
     }
 
 

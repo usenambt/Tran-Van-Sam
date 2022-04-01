@@ -20,7 +20,6 @@
             <td th:text="${newslist.getHeader()}"></td>
             <td th:text="${newslist.category.name}"></td>
 
-
             <td><a th:href="@{/news/detail/{id} (id=${newslist.getId()})}"><button class="btn btn-info"><i class="fa fa-edit"></i> Detail</button></a></td>
             <td><a th:href="@{/news/edit/{id} (id=${newslist.getId()})}"><button class="btn btn-info"><i class="fa fa-edit"></i> Edit</button></a></td>
             <td><a th:href="@{/news/delete/{id} (id=${newslist.getId()})}"><button class="btn btn-danger"><i class="fa fa-trash"></i> &nbsp; Delete</button></a></td>

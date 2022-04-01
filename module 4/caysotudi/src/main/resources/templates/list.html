@@ -3,57 +3,21 @@
 <html lang="en">
 <head>
     <title>Danh sach khach hang</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 <body>
 <div class="container">
-    <h3>Danh sach khach hang</h3>
-    <form action="/customer/search" method="get">
-        <div class="row">
-            <div class="col-sm-12 col-md-6 col-lg-1">
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-1">
-                <label for="">Ten</label>
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-2">
-                <input class="form-control" type="text" name="namecustomer" th:value="${namecustomer}">
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-1">
-                <label for="">Phone</label>
-            </div>
-
-            <div class="col-sm-12 col-md-6 col-lg-2">
-
-                <input class="form-control" type="text" name="phonecustomer" th:value="${customerphone}">
-            </div>
-
-            <div class="col-sm-12 col-md-6 col-lg-1">
-                <label for="">Loai KH</label>
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-2">
-                <select class="form-control" th:name="idcustomertype" id="">
-                    <option value="">Chon loai KH</option>
-                    <option th:if="${customertypelist.customerTypeId}==${idcustomertype}" selected  th:each="customertypelist:${customerTypeList}"
-                            th:text="${customertypelist.customerTypeName}"
-                            th:value="${customertypelist.customerTypeId}">
-                    </option>
-                    <option th:unless="${customertypelist.customerTypeId}==${idcustomertype}"  th:each="customertypelist:${customerTypeList}"
-                            th:text="${customertypelist.customerTypeName}"
-                            th:value="${customertypelist.customerTypeId}">
-                    </option>
-                </select>
-            </div>
-
-            <form action="/news/search" method="get">
-                <input type="text" name="value">
-                <button type="submit" class="btn btn-info">Tim kiem</button>
-            </form>
-
-        </div>
+    <h3>Danh sách khách hàng</h3>
+    <form action="/news/search" method="get">
+        <input type="text" name="value">
+        <button type="submit" class="btn btn-info">Tim kiem</button>
     </form>
 
     <a href="/customer/create">Them moi khach hang</a>
+    <br> <br>
     <div class="table-responsive-md">
-        <table class="table table-bordered">
+        <table border="1" class="table table-bordered">
             <thead style="background: aqua">
             <th>ID</th>
             <th>Name</th>
@@ -67,7 +31,7 @@
             <th colspan="3">Action</th>
             </thead>
             <tbody>
-            <!--        Hien thi di lieu mac dinh-->
+<!--            <H2>Sổ tên ra đây</H2>-->
             <tr  th:if="${customerList}" th:each="customerlist:${customerList}">
                 <td th:text="${customerlist.customerId}"></td>
                 <td th:text="${customerlist.customerName}"></td>
@@ -78,12 +42,45 @@
                 <td th:text="${customerlist.customerEmail}"></td>
                 <td th:text="${customerlist.customerAddress}"></td>
                 <td th:text="${customerlist.customerType.customerTypeName}"></td>
-                <td><button class="btn btn-success" data-toggle="modal" data-target="#detailModal" th:onclick="'detailEmployee('+${customerlist.customerId}+')'">Detail</button></td>
-                <td><a th:href="@{/customer/edit/{customerId} (customerId=${customerlist.customerId})}"><button class="btn btn-info">Edit</button></a></td>
-                <td><button class="btn btn-danger" data-toggle="modal" data-target="#abc" th:onclick="prepareDelete([[${customerlist.customerId}]],[[${customerlist.customerName}]])">Delete</button></td>
+                <td><a th:href="@{/customer/detail/{customerId} (customerId=${customerlist.customerId})}"><button class="btn btn-info"><i class="fa fa-edit"></i> Detail</button></a></td>
+<!--                <td><button class="btn btn-success" data-toggle="modal" data-target="#detailModal" th:onclick="'detailEmployee('+${customerlist.customerId}+')'">Detail</button></td>-->
+                <td><a th:href="@{/customer/edit/{customerId} (customerId=${customerlist.customerId})}"><button class="btn btn-warning">Edit</button></a></td>
+<!--                <td><button class="btn btn-danger" data-toggle="modal" data-target="#abc" th:onclick="prepareDelete([[${customerlist.customerId}]],[[${customerlist.customerName}]])">Delete</button></td>-->
+                <td><a th:href="@{/customer/delete/{customerId} (customerId=${customerlist.customerId})}"><button class="btn btn-danger">Delete</button></a></td>
+
             </tr>
             </tbody>
         </table>
+    </div>
+</div>
+
+<!--<h3>phân trang</h3>-->
+<div th:if="${customerList}" style="display: flex;justify-content: flex-end">
+    <div>
+            <span class="paginate_button">
+                <a th:if="${customerList.hasPrevious()}" th:href="@{/customer (page=${customerList.number}-1)}">
+                    Previous
+                </a>
+                <span th:unless="${customerList.hasPrevious()}" style="color: #c8cbcf">Previous</span>
+            </span>
+    </div>
+    <div>
+            <span th:each="abc:${#numbers.sequence(0,customerList.totalPages - 1)}">
+                <a class="paginate_button" th:href="@{/customer (page=${abc})}">
+                     <span th:unless="${customerList.number}==${abc}" th:text="${abc} + 1">   </span>
+                     <span th:if="${customerList.number}==${abc}" style="color: red" th:text="${abc} + 1">   </span>
+                </a>
+            </span>
+
+    </div>
+
+    <div>
+            <span class="paginate_button">
+                <a th:if="${customerList.hasNext()}" th:href="@{/customer (page=${customerList.number}+1)}">
+                    Next
+                 </a>
+                <span th:unless="${customerList.hasNext()}" style="color: #c8cbcf">Next</span>
+        </span>
     </div>
 </div>
 </body>
