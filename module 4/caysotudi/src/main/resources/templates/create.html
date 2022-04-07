@@ -8,12 +8,14 @@
 </head>
 <body>
 <div class="container">
-    <h3>Tạo mới khách hàng</h3>
-    <form action="/customer/save" method="post" th:object="${customer}">
+    <h3>Add new customer</h3>
+    <form action="/customer/create" method="post" th:object="${customer}">
         <div class="row">
             <div class="col-md-6">
                 <p>Name</p>
-                <input class="form-control" type="text" th:field="*{customerName}">
+                <input placeholder="Input your name" class="form-control" type="text" th:field="*{customerName}">
+                <p th:if = "${#fields.hasErrors('customerName')}" th:errors = "*{customerName}"></p>
+
             </div>
             <div class="col-md-6">
                 <p>Birthday</p>
@@ -31,23 +33,30 @@
             </div>
             <div class="col-md-6">
                 <p>ID</p>
-                <input class="form-control" type="number" th:field="*{customerIdCard}">
+                <input placeholder="Input your ID" class="form-control" type="number" th:field="*{customerIdCard}">
+                <p th:if = "${#fields.hasErrors('customerIdCard')}" th:errors = "*{customerIdCard}"></p>
+
             </div>
         </div>
         <div class="row">
             <div class="col-md-6">
                 <p>Phone</p>
-                <input class="form-control" type="number" th:field="*{customerPhone}">
+                <input placeholder="Input your phone number" class="form-control" type="number" th:field="*{customerPhone}">
+                <p th:if = "${#fields.hasErrors('customerPhone')}" th:errors = "*{customerPhone}"></p>
             </div>
             <div class="col-md-6">
                 <p>Email</p>
-                <input class="form-control" type="text" th:field="*{customerEmail}">
+                <input placeholder="Input your well-formed email address" class="form-control" type="text" th:field="*{customerEmail}">
+                <p th:if = "${#fields.hasErrors('customerEmail')}" th:errors = "*{customerEmail}"></p>
+
             </div>
         </div>
         <div class="row">
             <div class="col-md-6">
                 <p>Address</p>
-                <input class="form-control" type="text" th:field="*{customerAddress}">
+                <input placeholder="Input your phone address" class="form-control" type="text" th:field="*{customerAddress}">
+                <p th:if = "${#fields.hasErrors('customerAddress')}" th:errors = "*{customerAddress}"></p>
+
             </div>
             <div class="col-md-6">
                 <p>Customer Type</p>

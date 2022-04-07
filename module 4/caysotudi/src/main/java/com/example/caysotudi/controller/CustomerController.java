@@ -1,5 +1,6 @@
 package com.example.caysotudi.controller;
 
+
 import com.example.caysotudi.model.Customer;
 import com.example.caysotudi.service.CustomerService;
 import com.example.caysotudi.service.CustomerTypeService;
@@ -8,13 +9,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 import java.util.Optional;
 
 @Controller
-@RequestMapping("/customer")
+@RequestMapping("customer")
 public class CustomerController {
     @Autowired
     private CustomerService customerService;
@@ -35,8 +38,14 @@ public class CustomerController {
         model.addAttribute("customerTypeList", customerTypeService.selectAllCustomerType());
         return "create";
     }
-    @PostMapping("save")
-    public String saveCustomer(Customer customer){
+    @PostMapping("create")
+    public String saveCustomer(@Valid Customer customer, BindingResult bindingResult, Model model){
+        new Customer().validate(customer, bindingResult);
+        if(bindingResult.hasErrors()){
+            model.addAttribute("genderList",genderService.selectAllGender());
+            model.addAttribute("customerTypeList", customerTypeService.selectAllCustomerType());
+            return"create";
+        }
         customerService.saveCustomer(customer);
         return "redirect:/customer";
     }
@@ -51,7 +60,6 @@ public class CustomerController {
     public String editCustomer(@PathVariable int customerId, Model model, HttpServletRequest request){
 
         model.addAttribute("url",request.getHeader("referer"));
-
         model.addAttribute("customer", customerService.findCustomerById(customerId));
         model.addAttribute("genderList",genderService.selectAllGender());
         model.addAttribute("customerTypeList", customerTypeService.selectAllCustomerType());

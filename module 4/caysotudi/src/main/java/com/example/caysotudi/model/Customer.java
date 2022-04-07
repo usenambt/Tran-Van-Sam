@@ -1,30 +1,43 @@
 package com.example.caysotudi.model;
 
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.validation.Errors;
+import org.springframework.validation.Validator;
 
 import javax.persistence.*;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 import java.time.LocalDate;
 import java.util.List;
 
 @Entity
-public class Customer {
+public class Customer implements Validator {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int customerId;
+
+    @NotBlank
+    @Size(min = 5,max = 45)
     private String customerName;
+
     @DateTimeFormat(pattern = "dd/MM/yyyy")
     private LocalDate customerBirthday;
+    @NotBlank
+    @Min(value = 100000000,message = "ID must be 9 numbers")
+    @Max(value =999999999,message = "ID must be 9 numbers")
     private String customerIdCard;
+
     private String customerPhone;
+
+    @NotBlank
+    @Email
     private String customerEmail;
+
+    @NotBlank
+    @Size(min = 5,max = 45)
     private String customerAddress;
 
     @ManyToOne
-    @JoinColumn(name = "customerTypeId",referencedColumnName = "customerTypeId")
+    @JoinColumn(name = "customerTypeId", referencedColumnName = "customerTypeId")
     private CustomerType customerType;
 
     @ManyToOne
@@ -119,5 +132,25 @@ public class Customer {
 
     public void setGender(Gender gender) {
         this.gender = gender;
+    }
+
+    @Override
+    public boolean supports(Class<?> clazz) {
+        return false;
+    }
+
+    @Override
+    public void validate(Object target, Errors errors) {
+        Customer customer = (Customer) target;
+        String customerPhone = customer.getCustomerPhone();
+        if (customerPhone.length() > 11 || customerPhone.length() < 10) {
+            errors.rejectValue("customerPhone", null, "length of phonenumber failed");
+        }
+        if (!customerPhone.startsWith("0")) {
+            errors.rejectValue("customerPhone", null, "phonenumber start with 0");
+        }
+        if (!customerPhone.matches("(^$|[0-9]*$)")) {
+            errors.rejectValue("customerPhone", null, "phonenumber only contains number");
+        }
     }
 }

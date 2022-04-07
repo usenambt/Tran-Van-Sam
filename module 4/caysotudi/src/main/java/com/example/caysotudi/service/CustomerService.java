@@ -12,7 +12,7 @@ public interface CustomerService {
     void saveCustomer(Customer customer);
     Customer findCustomerById(int customerId);
     void deleteCustomer(int customerId);
-    Page<Customer> findByCustomerNameContainingAndCustomerPhoneContaining(Pageable pageable, String namecustomer, String phonecustomer);
-    Page<Customer> findByCustomerNameContainingAndCustomerPhoneContainingAndCustomerType_CustomerTypeId(Pageable pageable,String namecustomer, String phonecustomer, Optional<Integer> idcustomertype);
+    Page<Customer> findByCustomerNameContainingAndCustomerPhoneContaining(Pageable pageable, String questiontitle, String questionType);
+    Page<Customer> findByCustomerNameContainingAndCustomerPhoneContainingAndCustomerType_CustomerTypeId(Pageable pageable,String questiontitle, String questionType, Optional<Integer> questionTypeId);
     List<Customer> selectAllCustomer();
 }
