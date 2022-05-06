@@ -12,6 +12,8 @@ import { ColorPickerComponent } from './color-picker/color-picker.component';
 import { DetailsHackernewsComponent } from './details-hackernews/details-hackernews.component';
 import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { RatingBarComponent } from './rating-bar/rating-bar.component';
+import { CoutdownComponent } from './coutdown-timer/coutdown.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { NavbarComponent } from './navbar/navbar.component';
     ColorPickerComponent,
     DetailsHackernewsComponent,
     FooterComponent,
-    NavbarComponent
+    NavbarComponent,
+    RatingBarComponent,
+    CoutdownComponent
   ],
   imports: [
     BrowserModule,
