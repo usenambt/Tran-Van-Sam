@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Danh sach khuyen mai</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<div class="container">
+    <div>
+        <div class="row">
+            <div class="col-6">
+                <h3>Danh sách khuyến mãi</h3>
+            </div>
+            <div class="col-3">
+                <a href="/create">
+                    <button class="btn btn-primary">
+                        Thêm khuyến mãi
+                    </button>
+                </a>
+            </div>
+        </div>
+        <div>
+            <form action="/search" method="get">
+                <div class="row">
+                    <div class="col-1">TimeStart</div>
+                    <div class="col-2">
+                        <input type="date" name="timestart">
+                    </div>
+                    <div class="col-1">TimeEnd</div>
+                    <div class="col-2">
+                        <input type="date" name="timeend">
+                    </div>
+                    <div class="col-2"></div>
+                    <div class="col-2"></div>
+                    <div class="col-2">
+                        <button class="btn btn-primary">Tìm kiếm</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <table class="table table-bordered">
+        <thead>
+        <th>Tiêu đề</th>
+        <th>Thời gian bắt đầu</th>
+        <th>Thời gian kết thúc</th>
+        <th>Mức giảm giá</th>
+        <th>Chi tiết</th>
+        <th>Sửa</th>
+        <th>Xóa</th>
+        </thead>
+        <tbody>
+        <tr th:each="promotionList:${promotionLists}">
+            <td th:text="${promotionList.tilte}"></td>
+            <td th:text="${#temporals.format(promotionList.timeStart, 'dd-MM-yyyy HH:mm:ss')}"></td>
+            <td th:text="${#temporals.format(promotionList.timeEnd, 'dd-MM-yyyy HH:mm:ss')}"></td>
+            <td th:text="${promotionList.price}"></td>
+            <td th:text="${promotionList.detail}"></td>
+            <td>
+                <a th:href="@{/edit/{id} (id=${promotionList.id}) }">
+                    <i class="fa fa-edit"></i>
+                </a>
+            </td>
+            <td>
+                <button>
+                    <i class="fa fa-trash"
+                       th:onclick="prepareDelete([[${promotionList.id}]],[[${promotionList.tilte}]])"
+                       data-toggle="modal" data-target="#myModal"></i>
+                </button>
+                </i>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- The Modal -->
+<div class="modal" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Modal Heading</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <span id="id"></span>
+                <span>Bạn có muốn xóa khuyến mãi</span>
+                <span id="title"></span>
+                <span>?</span>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" onclick="deletePromotion($('#id').html())" class="btn btn-danger"
+                        data-dismiss="modal">Xóa
+                </button>
+                <button type="button" class="btn btn-success" data-dismiss="modal">Bỏ qua</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script>
+    function prepareDelete(id, title) {
+        $('#id').html(id);
+        $('#title').html(title);
+    }
+
+    function deletePromotion(id) {
+        $.ajax({
+            type: 'get',
+            url: '/delete/' + id,
+            success: function () {
+                window.location.href = "/";
+            }
+        })
+    }
+</script>
+</body>
+</html>

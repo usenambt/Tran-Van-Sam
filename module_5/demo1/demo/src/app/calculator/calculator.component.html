@@ -1,0 +1,13 @@
+<h2 style="color: red">Calculator</h2>
+<input type="number" (change)="varibleX($event)">
+<select (change)="pheptinh($event)">
+  <option value="+">+</option>
+  <option value="-">-</option>
+  <option value="*">*</option>
+  <option value="/">/</option>
+</select>
+<input type="number" (change)="varibleY($event)">
+<button (click)="clickSubmit()">Thực thi</button>
+<div>
+  <label>Kết quả: <input value="{{result}}"></label>
+</div>

@@ -13,8 +13,12 @@ import java.util.List;
 public interface CustomerRepository extends JpaRepository<Customer, Long> {
     Page<Customer> findAll(Pageable pageable);
 
-    @Query(value="SELECT * FROM customer WHERE name like concat('%', ?1 ,'%') ",
-            countQuery="SELECT count(*) FROM customer WHERE name like concat('%', ?1 ,'%')  ",
-            nativeQuery=true)
+    @Query(value = "SELECT * FROM customer WHERE name like concat('%', ?1 ,'%') ",
+            countQuery = "SELECT count(*) FROM customer WHERE name like concat('%', ?1 ,'%')  ",
+            nativeQuery = true)
     Page<Customer> searchByName(String name, Pageable pageable);
+
+//    // Search co Int = null
+//    @Query("select q from Question q where (:id is null or q.questionId = :id) and (q.questionTitle like %:title%)")
+//    List<Question> findAllByIdAndTitle(Integer id, String title);
 }

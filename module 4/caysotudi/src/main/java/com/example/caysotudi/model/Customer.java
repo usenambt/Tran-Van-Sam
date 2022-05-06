@@ -22,8 +22,8 @@ public class Customer implements Validator {
     @DateTimeFormat(pattern = "dd/MM/yyyy")
     private LocalDate customerBirthday;
     @NotBlank
-    @Min(value = 100000000,message = "ID must be 9 numbers")
-    @Max(value =999999999,message = "ID must be 9 numbers")
+    @Min(value = 100000000)
+    @Max(value =999999999)
     private String customerIdCard;
 
     private String customerPhone;

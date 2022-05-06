@@ -1,0 +1,9 @@
+<div *ngIf="detailHackernew">
+  <h3>Detail hackernews</h3>
+  <p>Title: {{detailHackernew.title}}</p>
+  <p>Url: <a href="{{detailHackernew.url}}" target="_blank">{{detailHackernew.url}}</a></p>
+  <p>Like: {{like}}</p>
+  <label>Edit url: <input type="text" id="setUrl" style="width: 500px">
+    <button (click)="setUrl()">Update</button>
+  </label>
+</div>

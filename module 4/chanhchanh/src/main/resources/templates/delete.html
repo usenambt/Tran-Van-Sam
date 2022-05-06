@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete</title>
+</head>
+<body>
+<form action="/khuyenmai/delete" method="post">
+
+    <div >
+        <h2 class="modal-title">Delete khuyenmai</h2>
+    </div>
+    <div >
+        <input type="hidden" th:field="${khuyenmai.khuyenmaiId}">
+        <h5 th:text="'Are you delete khuyenmai title: ' + ${khuyenmai.khuyenmaiTen} + ' ?'"></h5>
+    </div>
+    <div >
+        <button type="button" class="btn btn-secondary close" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-danger">Delete</button>
+    </div>
+</form>
+</body>
+</html>

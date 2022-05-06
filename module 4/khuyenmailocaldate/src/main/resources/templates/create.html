@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thêm mới khuyến mãi</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+</head>
+<body>
+<div class="container">
+
+    <h3 th:if="${promotion.id==0}">Thêm mới khuyến mãi</h3>
+    <h3 th:unless="${promotion.id==0}">Cập nhật khuyến mãi</h3>
+
+    <form action="/save" method="post" th:object="${promotion}">
+        <div class="row">
+            <div class="col-2">Tiêu đề</div>
+            <div class="col-6">
+                <input type="hidden" th:field="*{id}">
+                <input class="form-control" type="text" th:field="*{tilte}">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2">Thời gian bắt đầu</div>
+            <div class="col-6">
+                <input class="form-control" type="datetime-local" th:field="*{timeStart}">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2">Thời gian kết thúc</div>
+            <div class="col-6">
+                <input class="form-control" type="datetime-local" th:field="*{timeEnd}">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2">Mức giảm giá</div>
+            <div class="col-6">
+                <input class="form-control" type="number" th:field="*{price}">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2">Chi tiết</div>
+            <div class="col-6">
+                <textarea class="form-control" cols="30" rows="10" th:field="*{detail}"></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-6">
+                <button class="btn btn-primary" type="submit">Thêm mới</button>
+                <a href="/">
+                    <button type="button" class="btn btn-primary">Quay lại</button>
+                </a>
+
+            </div>
+        </div>
+
+    </form>
+
+</div>
+</body>
+</html>

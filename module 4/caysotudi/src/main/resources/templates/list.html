@@ -95,8 +95,8 @@
     <td th:text="${customersearchlist.customerPhone}"></td>
     <td th:text="${customersearchlist.customerAddress}"></td>
     <td th:text="${customersearchlist.customerType.customerTypeName}"></td>
-    <td><button class="btn btn-success" data-toggle="modal" data-target="#detailModal" th:onclick="'detailEmployee('+${customersearchlist.customerId}+')'">Detail</button></td>
-    <td><a th:href="@{/customer/edit/{customerId} (customerId=${customersearchlist.customerId})}"><button class="btn btn-info">Edit</button></a></td>
+    <td><button class="btn btn-info" data-toggle="modal" data-target="#detailModal" th:onclick="'detailEmployee('+${customersearchlist.customerId}+')'">Detail</button></td>
+    <td><a th:href="@{/customer/edit/{customerId} (customerId=${customersearchlist.customerId})}"><button class="btn btn-warning">Edit</button></a></td>
     <td><button class="btn btn-danger" data-toggle="modal" data-target="#abc" th:onclick="prepareDelete([[${customersearchlist.customerId}]],[[${customersearchlist.customerName}]])">Delete</button></td>
 </tr>
             </tbody>

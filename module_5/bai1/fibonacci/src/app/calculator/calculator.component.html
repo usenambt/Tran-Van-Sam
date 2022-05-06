@@ -1,0 +1,11 @@
+<input type="number" placeholder="So1" #element1>
+<select #element3>
+  <option value="+">+</option>
+  <option value="-">-</option>
+  <option value="*">*</option>
+  <option value="/">/</option>
+</select>
+<input type="number" placeholder="So2" #element2>
+
+<button (click)="total(element1.value,element2.value,element3.value)">Total</button>
+
