@@ -5,7 +5,7 @@ import {Component, Input, OnDestroy, OnInit} from '@angular/core';
   templateUrl: './countdown-timer.component.html',
   styleUrls: ['./countdown-timer.component.css']
 })
-export class CountdownTimerComponent implements OnInit, OnDestroy {
+export class CountdownTimerComponent implements OnInit,OnDestroy {
 
   private intervalId = 0;
   message = '';

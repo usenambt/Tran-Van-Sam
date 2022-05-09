@@ -1,0 +1,85 @@
+<div class="row">
+  <div class="col-3"></div>
+  <div class="col-6">
+    <h3>Sign-up account</h3>
+    <form [formGroup]="account" (ngSubmit)="onSubmit()">
+
+      <div class="form-group">
+        <label>Email: </label>
+        <input formControlName="email" class="form-control" type="email">
+        <div *ngIf="account.get('email').hasError('required')
+       && account.get('email').touched" style="color: red">
+          Không được để trống !!!
+        </div>
+
+        <div *ngIf="account.get('email').hasError('email')
+       && account.get('email').touched" style="color: red">
+          Định dạng email sai !!!
+        </div>
+      </div>
+
+
+      <div class="form-group" formGroupName="checkPassword">
+        <label>Password: </label>
+        <input formControlName="password" class="form-control" type="password">
+        <div *ngIf="account.get('checkPassword').get('password').hasError('required')
+       && account.get('checkPassword').get('password').touched" style="color: red">
+          Not found !!!
+        </div>
+        <div *ngIf="account.get('checkPassword').get('password').hasError('minlength')" style="color: red">
+          Min length = 6
+        </div>
+        <div class="form-group">
+          <label>Confirm password: </label>
+          <input formControlName="confirmPassword" class="form-control">
+        </div>
+        <div *ngIf="account.controls.checkPassword.hasError('passwordnotmatch') &&
+account.get('checkPassword').get('confirmPassword').dirty" style="color: red">Mật khẩu không khớp !!!
+        </div>
+
+      </div>
+
+      <div class="form-group">
+        <label>Country: </label>
+        <input formControlName="country" class="form-control">
+        <div *ngIf="account.get('country').hasError('required') && account.get('country').touched" style="color:red;">
+          Not found !!!
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Age: </label>
+        <input formControlName="age" class="form-control" type="number">
+        <div *ngIf="account.get('age').hasError('min')" style="color: red">
+          >= 18
+        </div>
+        <div *ngIf="account.get('age').hasError('required') && account.get('age').touched" style="color:red;">
+          Not found !!!
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Gender: </label>
+        <input formControlName="gender" class="form-control">
+        <div *ngIf="account.get('gender').hasError('required') && account.get('gender').touched" style="color:red;">
+          Not found !!!
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Phone: </label>
+        <input formControlName="phone" class="form-control" type="text">
+        <div *ngIf="account.get('phone').hasError('required') && account.get('phone').touched" style="color: red">
+          Not found !!!
+        </div>
+        <div *ngIf="account.get('phone').hasError('pattern') && account.get('phone').touched" style="color: red">
+          Format phone: +84(+94) xxx xxx xxx (9 or 10)
+        </div>
+      </div>
+
+      <button class="btn btn-success form-control" type="submit">Sign-up</button>
+      <div *ngIf="isSubmit" style="color: red">Error !!!</div>
+    </form>
+    <app-login [accounts]="accountsDaos"></app-login>
+  </div>
+</div>

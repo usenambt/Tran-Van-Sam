@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FontSizeEditorComponent } from './font-size-editor/font-size-editor.component';
 import { PetInforComponent } from './pet-infor/pet-infor.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { ListCategoryComponent } from './list-category/list-category.component';
 import { CalculatorComponent } from './calculator/calculator.component';
 import { ColorPickerComponent } from './color-picker/color-picker.component';
@@ -13,7 +13,10 @@ import { DetailsHackernewsComponent } from './details-hackernews/details-hackern
 import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RatingBarComponent } from './rating-bar/rating-bar.component';
-import { CoutdownComponent } from './coutdown-timer/coutdown.component';
+import { CountdownTimerComponent } from './countdown-timer/countdown-timer.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterFinalComponent } from './register-final/register-final.component';
+import { TodoComponent } from './todo/todo.component';
 
 @NgModule({
   declarations: [
@@ -27,12 +30,16 @@ import { CoutdownComponent } from './coutdown-timer/coutdown.component';
     FooterComponent,
     NavbarComponent,
     RatingBarComponent,
-    CoutdownComponent
-  ],
+    CountdownTimerComponent,
+    LoginComponent,
+    RegisterFinalComponent,
+    TodoComponent,
+      ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
