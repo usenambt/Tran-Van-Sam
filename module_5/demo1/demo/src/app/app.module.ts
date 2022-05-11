@@ -17,6 +17,7 @@ import { CountdownTimerComponent } from './countdown-timer/countdown-timer.compo
 import { LoginComponent } from './login/login.component';
 import { RegisterFinalComponent } from './register-final/register-final.component';
 import { TodoComponent } from './todo/todo.component';
+import { AloComponent } from './alo/alo.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { TodoComponent } from './todo/todo.component';
     LoginComponent,
     RegisterFinalComponent,
     TodoComponent,
+    AloComponent,
       ],
   imports: [
     BrowserModule,
