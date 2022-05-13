@@ -1,0 +1,61 @@
+<h1 mat-dialog-title>Nhập hàng</h1>
+
+<mat-dialog-content>
+  <form [formGroup]="formGroup" class="row" (submit)="onSubmit()">
+    <div class="col-1"></div>
+
+    <div class="col-5">
+
+      <mat-form-field appearance="fill">
+        <mat-label>Sản phẩm</mat-label>
+        <mat-select formControlName="sanPham" required [compareWith]="compareWith">>
+          <mat-option>--</mat-option>
+          <mat-option *ngFor="let sanPham of sanPhams" [value]="sanPham">
+            {{sanPham.name}}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="formGroup.get('sanPham').hasError('required')">Không được để trống !</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Số lượng</mat-label>
+        <input type="number" matInput formControlName="soLuong">
+        <mat-error>Không được để trống !</mat-error>
+      </mat-form-field>
+
+    </div>
+
+    <div class="col-6">
+
+      <mat-form-field appearance="fill">
+        <mat-label>Ngày nhập hàng</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="ngayNhapHang">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error *ngIf="formGroup.get('ngayNhapHang').hasError('required')">Không được để trống !</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Ngày sản xuất</mat-label>
+        <input matInput [matDatepicker]="picker2" formControlName="ngaySanXuat">
+        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+        <mat-datepicker #picker2></mat-datepicker>
+        <mat-error *ngIf="formGroup.get('ngaySanXuat').hasError('required')">Không được để trống !</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Ngày hết hạn</mat-label>
+        <input matInput [matDatepicker]="picker3" formControlName="ngayHetHan">
+        <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+        <mat-datepicker #picker3></mat-datepicker>
+        <mat-error *ngIf="formGroup.get('ngayHetHan').hasError('required')">Không được để trống !</mat-error>
+      </mat-form-field>
+
+    </div>
+
+    <div class="button-submit">
+      <button mat-raised-button mat-dialog-close style="margin-right: 8px;">Hủy</button>
+      <button type="submit" mat-raised-button color="primary">Nhập hàng</button>
+    </div>
+  </form>
+</mat-dialog-content>

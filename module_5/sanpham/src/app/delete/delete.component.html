@@ -1,0 +1,12 @@
+<h1 mat-dialog-title>Bạn có muốn xóa ? </h1>
+<mat-dialog-content>
+  <ul>
+    <li><span>Mã lô hàng: </span>LH-{{data.id}}</li>
+    <li><span>Tên sản phầm: </span>{{data.sanPham.name}}</li>
+  </ul>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-raised-button mat-dialog-close>Hủy</button>
+  <button mat-raised-button color="warn" [mat-dialog-close]="true">Xóa</button>
+</mat-dialog-actions>
