@@ -1,0 +1,186 @@
+{
+  "customer": [
+    {
+      "id": 1,
+      "name": "Đầu trâu",
+      "typeCustomer": {
+        "id": 3,
+        "name": "Gold"
+      },
+      "dayOfBirthday": "1999-10-20",
+      "cccd": "206191220",
+      "phone": "0971718030",
+      "email": "trungtrongcr21@gmail.com",
+      "address": "Quảng Nam"
+    },
+    {
+      "id": 2,
+      "name": "Đầu Bò",
+      "typeCustomer": {
+        "id": 2,
+        "name": "Platinium"
+      },
+      "dayOfBirthday": "1999-10-20",
+      "cccd": "9999",
+      "phone": "0987654321",
+      "email": "trungtrong99@gmail.com",
+      "address": "Đà Nẵng"
+    },
+    {
+      "id": 3321132,
+      "name": "Đầu Heo",
+      "typeCustomer": {
+        "id": 5,
+        "name": "Member"
+      },
+      "dayOfBirthday": "1999-10-20",
+      "cccd": "206191220",
+      "phone": "0971718030",
+      "email": "trungtrongcr21@gmail.com",
+      "address": "Quảng Nam"
+    },
+    {
+      "id": 321,
+      "name": "Đầu Tôm",
+      "typeCustomer": {
+        "id": 5,
+        "name": "Member"
+      },
+      "dayOfBirthday": "1999-10-20",
+      "cccd": "206191220",
+      "phone": "0971718030",
+      "email": "trungtrongcr21@gmail.com",
+      "address": "Quảng Nam"
+    }
+  ],
+  "typeCustomer": [
+    {
+      "id": 1,
+      "name": "Diamond"
+    },
+    {
+      "id": 2,
+      "name": "Platinium"
+    },
+    {
+      "id": 3,
+      "name": "Gold"
+    },
+    {
+      "id": 4,
+      "name": "Silver"
+    },
+    {
+      "id": 5,
+      "name": "Member"
+    }
+  ],
+  "viTri": [
+    {
+      "id": 1,
+      "name": "Lễ Tân"
+    },
+    {
+      "id": 2,
+      "name": "Phục vục"
+    },
+    {
+      "id": 3,
+      "name": "Chuyên viên"
+    },
+    {
+      "id": 4,
+      "name": "Giám sát"
+    },
+    {
+      "id": 5,
+      "name": "Quản lý"
+    },
+    {
+      "id": 6,
+      "name": "Giám đốc"
+    }
+  ],
+  "boPhan": [
+    {
+      "id": 1,
+      "name": "Sale-Marketing"
+    },
+    {
+      "id": 2,
+      "name": "Hành chính"
+    },
+    {
+      "id": 3,
+      "name": "Phục vụ"
+    },
+    {
+      "id": 4,
+      "name": "Quản lý"
+    }
+  ],
+  "trinhDo": [
+    {
+      "id": 1,
+      "name": "Trung cấp"
+    },
+    {
+      "id": 2,
+      "name": "Cao đẳng"
+    },
+    {
+      "id": 3,
+      "name": "Đại học"
+    },
+    {
+      "id": 4,
+      "name": "sau Đại học"
+    }
+  ],
+  "employee": [
+    {
+      "id": 1,
+      "name": "Võ Trung Trọng",
+      "viTri": {
+        "id": 3,
+        "name": "Chuyên viên"
+      },
+      "boPhan": {
+        "id": 2,
+        "name": "Hành chính"
+      },
+      "trinhDo": {
+        "id": 2,
+        "name": "Cao đẳng"
+      },
+      "dayOfBirthday": "2021-10-10",
+      "cccd": "20619122012",
+      "salary": "1000000",
+      "phone": "0909090909",
+      "email": "trungtrong@gmail.com",
+      "address": "Quảng Nam"
+    },
+    {
+      "id": 2,
+      "name": "Nguyễn Văn A",
+      "viTri": {
+        "id": 3,
+        "name": "Chuyên viên"
+      },
+      "boPhan": {
+        "id": 2,
+        "name": "Hành chính"
+      },
+      "trinhDo": {
+        "id": 2,
+        "name": "Cao đẳng"
+      },
+      "dayOfBirthday": "1999-09-09",
+      "cccd": "23456789567",
+      "salary": "3000000",
+      "phone": "0123456789",
+      "email": "nguyenvana@gmail.com",
+      "address": "Đà Nẵng"
+    }
+  ]
+}

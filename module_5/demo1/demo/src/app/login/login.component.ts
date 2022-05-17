@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {AbstractControl, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {AccountsDao} from '../dao/AccountsDao';
-import {IAccount} from '../model/IAccount';
+import {IAccount} from '../models/IAccount';
 import {style} from '@angular/animations';
 import {colors} from '@angular/cli/utilities/color';
 

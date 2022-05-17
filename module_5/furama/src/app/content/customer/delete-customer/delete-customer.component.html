@@ -1,0 +1,13 @@
+<h1 mat-dialog-title style="color: red">Do you want to delete?</h1>
+
+<mat-dialog-content>
+  <ul>
+    <li>Id: {{customer.id}}</li>
+    <li>Name: {{customer.name}}</li>
+  </ul>
+</mat-dialog-content>
+
+<mat-dialog-actions  align="end">
+  <button mat-raised-button mat-dialog-close>Cancel</button>
+  <button mat-raised-button color="warn" [mat-dialog-close]="true">Delete</button>
+</mat-dialog-actions>

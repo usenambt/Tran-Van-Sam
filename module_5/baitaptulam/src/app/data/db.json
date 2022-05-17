@@ -1,0 +1,122 @@
+{
+  "khachHang": [
+    {
+      "id": 1,
+      "name": "Óc Chó"
+    },
+    {
+      "id": 2,
+      "name": "Đầu Heo"
+    },
+    {
+      "id": 3,
+      "name": "Đầu Trâu"
+    }
+  ],
+  "soTietKiem": [
+    {
+      "id": 1,
+      "khachHang": {
+        "id": 2,
+        "name": "Đầu Bò"
+      },
+      "ngayMoSo": "2021-12-14T17:00:00.000Z",
+      "thoigianBatdauGui": "2021-12-14T17:00:00.000Z",
+      "kyHan": "6 tháng",
+      "soTienGui": 32111111,
+      "laiSuat": "10%",
+      "uuDai": "Áo"
+    },
+    {
+      "id": 2,
+      "khachHang": {
+        "id": 2,
+        "name": "Đầu Tôm"
+      },
+      "ngayMoSo": "2021-12-14T17:00:00.000Z",
+      "thoigianBatdauGui": "2021-12-13T17:00:00.000Z",
+      "kyHan": "6 tháng",
+      "soTienGui": 32111111,
+      "laiSuat": "10%",
+      "uuDai": "Áo"
+    },
+    {
+      "id": 3,
+      "khachHang": {
+        "id": 2,
+        "name": "Đầu Đất"
+      },
+      "ngayMoSo": "2021-12-14T17:00:00.000Z",
+      "thoigianBatdauGui": "2021-12-13T17:00:00.000Z",
+      "kyHan": "6 tháng",
+      "soTienGui": 32111111,
+      "laiSuat": "10%",
+      "uuDai": "Áo"
+    },
+    {
+      "id": 4,
+      "khachHang": {
+        "id": 2,
+        "name": "Đầu Buồi"
+      },
+      "ngayMoSo": "2021-12-14T17:00:00.000Z",
+      "thoigianBatdauGui": "2021-12-13T17:00:00.000Z",
+      "kyHan": "6 tháng",
+      "soTienGui": 32111111,
+      "laiSuat": "10%",
+      "uuDai": "Áo"
+    },
+    {
+      "id": 5,
+      "khachHang": {
+        "id": 2,
+        "name": "Đầu Gối"
+      },
+      "ngayMoSo": "2021-12-14T17:00:00.000Z",
+      "thoigianBatdauGui": "2021-12-13T17:00:00.000Z",
+      "kyHan": "6 tháng",
+      "soTienGui": 32111111,
+      "laiSuat": "10%",
+      "uuDai": "Áo"
+    },
+    {
+      "id": 6,
+      "khachHang": {
+        "id": 2,
+        "name": "Đầu Mu"
+      },
+      "ngayMoSo": "2021-12-14T17:00:00.000Z",
+      "thoigianBatdauGui": "2021-12-13T17:00:00.000Z",
+      "kyHan": "6 tháng",
+      "soTienGui": 32111111,
+      "laiSuat": "10%",
+      "uuDai": "Áo"
+    },
+    {
+      "id": 7,
+      "khachHang": {
+        "id": 1,
+        "name": "Đầu Cắt Moi"
+      },
+      "ngayMoSo": "2021-12-07T17:00:00.000Z",
+      "thoigianBatdauGui": "2021-12-07T17:00:00.000Z",
+      "kyHan": "6 tháng",
+      "soTienGui": 21298320918,
+      "laiSuat": "212112",
+      "uuDai": "oke"
+    },
+    {
+      "id": 8,
+      "khachHang": {
+        "id": 3,
+        "name": "Đầu Chó"
+      },
+      "ngayMoSo": "2021-12-14T17:00:00.000Z",
+      "thoigianBatdauGui": "2021-12-10T17:00:00.000Z",
+      "kyHan": "12 tháng",
+      "soTienGui": 21212121,
+      "laiSuat": "21212121",
+      "uuDai": "212121"
+    }
+  ]
+}

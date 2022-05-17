@@ -1,0 +1,21 @@
+<h1 mat-dialog-title>Customer information</h1>
+<div mat-dialog-content >
+  <!--  <div class="col-3"></div>-->
+  <!--  My favorite animal is:-->
+  <div style="margin-left: 20%">
+    <p><span>Id: </span>{{data.id}}</p>
+    <p><span>Name: </span>{{data.name}}</p>
+    <p><span>Type: </span>{{data.typeCustomer.name}}</p>
+    <p><span>Day of birthday: </span>{{data.dayOfBirthday}}</p>
+    <p><span>CCCD: </span>{{data.cccd}}</p>
+    <p><span>Phone: </span>{{data.phone}}</p>
+    <p><span>Email: </span>{{data.email}}</p>
+    <p><span>Address: </span>{{data.address}}</p>
+  </div>
+
+</div>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <!--  <button class="btn btn-danger" [mat-dialog-close]="true" style="margin-left: 10px">Install</button>-->
+</mat-dialog-actions>
+

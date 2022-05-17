@@ -1,0 +1,75 @@
+<h3>Create customer</h3>
+<p>
+  <button class="btn btn-dark" [routerLink]="['/customer']">Back to customer list</button>
+</p>
+
+<div class="row">
+  <div class="col-3"></div>
+
+  <form class="col-6" [formGroup]="customerForm" (submit)="onSubmit()">
+    <label>Id: </label>
+    <input formControlName="id" class="form-control">
+
+    <label>Name: </label>
+    <input formControlName="name" class="form-control" type="text">
+    <div *ngIf="(customerForm.get('name')?.hasError('required')
+&& customerForm.get('name')?.touched) " style="color: red">Not null !!!
+    </div>
+    <div style="color: red" *ngIf="isSubmit">Request re-entry ...</div>
+
+    <label>Type customer: </label>
+    <select formControlName="typeCustomer" class="form-control">
+      <option *ngFor="let typeCustomer of typeCustomers" [ngValue]="typeCustomer">{{typeCustomer.name}}</option>
+    </select>
+    <div *ngIf="customerForm.get('typeCustomer')?.hasError('required')
+&& customerForm.get('typeCustomer')?.touched" style="color: red">Not null !!!
+    </div>
+    <div style="color: red" *ngIf="isSubmit">Request re-entry ...</div>
+
+    <label>Day of birthday: </label>
+    <input formControlName="dayOfBirthday" class="form-control" type="date">
+    <div *ngIf="customerForm.get('dayOfBirthday')?.hasError('required')
+&& customerForm.get('dayOfBirthday')?.touched" style="color: red">Not null !!!
+    </div>
+
+    <div style="color: red" *ngIf="isSubmit">Request re-entry ...</div>
+
+    <label>CCCD: </label>
+    <input formControlName="cccd" class="form-control" type="text">
+    <div *ngIf="customerForm.get('cccd')?.hasError('required')
+&& customerForm.get('cccd')?.touched" style="color: red">Not null !!!
+    </div>
+    <div style="color: red" *ngIf="isSubmit">Request re-entry ...</div>
+
+    <label>Phone: </label>
+    <input formControlName="phone" class="form-control" type="text">
+    <div *ngIf="customerForm.get('phone')?.hasError('required')
+&& customerForm.get('phone')?.touched" style="color: red">Not null !!!
+    </div>
+    <div style="color: red" *ngIf="isSubmit">Request re-entry ...</div>
+
+    <label>Email: </label>
+    <input formControlName="email" class="form-control" type="email">
+    <div *ngIf="customerForm.get('email')?.hasError('required')
+&& customerForm.get('email')?.touched" style="color: red">Not null !!!
+    </div>
+    <div *ngIf="customerForm.get('email')?.hasError('email')
+&& customerForm.get('email')?.touched" style="color: red">Failed format email !!!
+    </div>
+    <div style="color: red" *ngIf="isSubmit">Request re-entry ...</div>
+
+    <label>Address: </label>
+    <input formControlName="address" class="form-control" type="text">
+    <div *ngIf="customerForm.get('address')?.hasError('required')
+&& customerForm.get('address')?.touched" style="color: red">Not null !!!
+    </div>
+    <div style="color: red" *ngIf="isSubmit">Request re-entry ...</div>
+
+    <br>
+    <button type="submit" class="btn btn-success form-control">Submit</button>
+    <div *ngIf="isSubmit" style="color: red; text-align: center">Unqualified !!!</div>
+
+  </form>
+
+  <div class="col-3"></div>
+</div>

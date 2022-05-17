@@ -10,7 +10,6 @@ import { ListCategoryComponent } from './list-category/list-category.component';
 import { CalculatorComponent } from './calculator/calculator.component';
 import { ColorPickerComponent } from './color-picker/color-picker.component';
 import { DetailsHackernewsComponent } from './details-hackernews/details-hackernews.component';
-import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RatingBarComponent } from './rating-bar/rating-bar.component';
 import { CountdownTimerComponent } from './countdown-timer/countdown-timer.component';
@@ -28,7 +27,6 @@ import { AloComponent } from './alo/alo.component';
     CalculatorComponent,
     ColorPickerComponent,
     DetailsHackernewsComponent,
-    FooterComponent,
     NavbarComponent,
     RatingBarComponent,
     CountdownTimerComponent,

@@ -1,0 +1,32 @@
+<div>
+  <input placeholder="tìm chi thì gõ dô">
+  <input placeholder="search">
+  <button>Tìm kiếm</button>
+</div>
+
+<p></p>
+
+<table class="table table-striped table-hover table-bordered" >
+  <tr>
+    <th>Mã số sổ</th>
+    <th>Mã khách hàng</th>
+    <th>Tên</th>
+    <th>Ngày mở sổ</th>
+    <th>Thời gian bắt đầu gửi</th>
+    <th>Kì hạn</th>
+    <th>Số tiền gửi</th>
+    <th>Lãi suất</th>
+    <th>Ưu đãi</th>
+  </tr>
+  <tr *ngFor="let soTietKiem of soTietKiemList">
+    <td>{{soTietKiem.id}}</td>
+    <td>{{soTietKiem.khachHang.id}}</td>
+    <td>{{soTietKiem.khachHang.name}}</td>
+    <td>{{soTietKiem.ngayMoSo | date:'dd/MM/yyyy'}}</td>
+    <td>{{soTietKiem.thoigianBatdauGui | date:'dd/MM/yyyy'}}</td>
+    <td>{{soTietKiem.kyHan}}</td>
+    <td>{{soTietKiem.soTienGui}}</td>
+    <td>{{soTietKiem.laiSuat}}</td>
+    <td>{{soTietKiem.uuDai}}</td>
+  </tr>
+</table>
