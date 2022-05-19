@@ -1,19 +1,18 @@
 {
-  "posts": [
+  "todos": [
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "content": "alo"
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "content": "đừng nói chi hết",
+      "complete": false,
+      "id": 2
+    },
+    {
+      "content": "hehehe",
+      "complete": false,
+      "id": 3
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }
