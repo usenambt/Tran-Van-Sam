@@ -1,0 +1,6 @@
+<h1 style="text-align: center;color:pink;">Edit todo</h1>
+<form [formGroup]="formEdit" (ngSubmit)="updateTodo1(id)">
+  <p>New content</p>
+  <input type="text" formControlName="content">
+  <button class="btn-primary">Update</button>
+</form>
