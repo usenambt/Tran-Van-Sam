@@ -1,0 +1,156 @@
+1.db.json
+bỏ dữ liệu ảo vào trong file db.json (Lưu ý: khi chạy không được tắt)
+2.tạo các component cụ thể(thương là 5: edit,list,delete,details,update).
+3.bỏ router vào trong app.conponent.html.
+Test routing trong file app-routing.module bằng cách thêm đường dẫn path+component.
+4.tạo model.
+5.tạo service
+
+
+npm install -g json-server
+json-server --watch db.json
+
+
+ng g service myservice
+
+angular.json: chứa các cấu hình cho angular CLI, dùng để build ứng dụng angular.
+package.json: cầu hình cho node.js,chứa các thư viện, nếu sử dụng thư viện bên thứ 3 cũng thêm vào ở đây
+
+các directive được hỗ trợ trong angular:
+	 Components directives: Không có nghi ngờ gì khi gọi component là directive cũng được, 
+vì rõ ràng là component cho phép định nghĩa selector và gọi ra như một thẻ html tag 
+	Structural directives: Là directive cấu trúc, dùng để vẽ html, hiển thị data lên giao diện html, 
+và thay đổi cấu trúc DOM bằng việc thêm bớt các phần tử trong DOM. Các structural directive thường có dấu '*' ở trước của directive. Ví dụ *ngFor, *ngIf
+	Attribute directives: Thay đổi giao diện, tương tác của các đối tượng hoặc thay đổi directive khác hoặc thêm các thuộc tính động cho element html. 
+ví dụ *ngStyle
+	
+	Khi chúng ta làm việc với Observable thì sẽ thường xuyên sử dụng phương thức subscribe để theo dõi các thay đổi của dữ liệu hoặc nhận về kết quả của 
+một công việc nào đó.
+	Khi API trả về kết quả thì dữ liệu đó sẽ được log ra qua phương thức subscribe. Và để kết thúc quá trình lắng nghe kết quả từ API trả về thì 
+chúng ta sẽ xử dụng đến phương thức unsubscribe.
+
+Singe Page Application hay Single Page Web Application là một ứng dụng web hay một website mà ở đó tất cả các thao tác của người dùng chỉ diễn ra trên 1
+ trang duy nhất, tất cả các cấu trúc của trang web (HTML) được load sẵn 1 lần và sẽ không load lại ngay cả khi chuyển trang.
+	Databinding là kỹ thuật nơi dữ liệu được đồng bộ giữa component và tầng view (template file html). Ví dụ khi người dùng cập nhật data ở 
+tầng view thì Angular cũng cập nhật giá trị đó ở component.
+
+	One way binding thì dữ liệu được truyền 1 chiều. Có thể từ view sang component hoặc ngược lại từ component sang view.
+	Từ component sang view chúng ta sử dụng Interpolation & Property Binding để hiển thị dữ liệu
+
+	Ngược lại nếu từ View truyền dữ liệu về component thì ta dùng Property binding.
+
+	Event Binding chúng ta sử dụng để bind các sự kiện như click chuột, sự kiện bàn phím.
+	
+	Two way binding là gì
+Binding 2 chiều có nghĩa là chúng ta thay đổi dữ liệu từ component qua view và ngược lại từ view chúng ta thay đổi dữ liệu.
+
+2 way binding thì hữu dụng khi mình làm form. Chúng ta sử dụng ngModel để thực hiện việc binding 2 chiều.
+
+	navigateByUrl tương tự như thay đổi trực tiếp thanh vị trí – chúng tôi đang cung cấp URL mới “hoàn toàn”. Trong khi đó, router. navigate tạo
+ một URL mới bằng cách áp dụng một loạt các lệnh được truyền vào, một bản vá, cho URL hiện tại.
+
+	Type script là ngôn ngữ lập trình ra đời nhằm khắc phục những hạn chế của JAVA SCRIPT như kiểu dữ kiệu, generic, OOP...
+	Type script được xem là tập hợp cha(super set) của JAVA SCRIPT, có đầy đủ tính năng của JS.
+	Ưu điểm của Type script:
+ +Hệ thống kiểu dữ liệu tốt hơn JAVA sciprt.
+ +Dễ dàng được gợi ý code trong các IDE/Editor.
+ +Support Generic giúp thiết kế hệ thống tốt hơn.
+ +Tạo sự nhất quán khi làm việc nhóm đông người.
+	
+	Trong Angular để truyền dữ liệu từ component cha xuống các component con thì ta sử dụng annotation @Input. Trong dự án Angular 
+component cha sẽ giao tiếp với component con thông qua thuộc tính properties. Annotation @Input được sử dụng để nhận các giá trị từ properties 
+từ cha xuống con
+	Cách truyền dữ liệu từ component con lên cha:
+ +Thông qua sự kiện: Trong component con ta sẽ sử dụng EventBinding để lắng nghe sự thay đổi data từ component con.
+ +Thông qua biến cục bộ.
+ +Thông qua View Child: Chúng ta có thể nhúng instance của component con vào cha thông qua annotation @ViewChild. 
+	
+For root dùng cho cả dự án và for child dùng cho component con.
+
+	Ưu điểm của angular:
+ +Angular cho phép người dùng xây dựng các component của riêng họ và có thể đóng gói chức năng cùng với logic kết xuất thành các phần có thể 
+tái sử dụng. Nó cũng hoạt động tốt với các component của web.
+ +Angular cho phép người dùng dễ dàng di chuyển dữ liệu từ mã JavaScript sang view và phản hồi với các sự kiện của người dùng mà không cần 
+phải viết bất kỳ mã nào theo cách thủ công.
+ +Angular cho phép người dùng viết các service mô-đun và đưa chúng vào bất cứ nơi nào họ cần. Điều này cải thiện khả năng kiểm tra và khả 
+năng tái sử dụng của các service giống nhau.
+ +Angular cung cấp đa nền tảng và tương thích với nhiều trình duyệt. Một ứng dụng Angular thường có thể chạy trên tất cả các trình duyệt 
+(Ví dụ: Chrome, Firefox) và hệ điều hành, chẳng hạn như Windows, macOS và Linux.
+	Nhược điểm của angular:
+ + Không an toàn: Thông thường, bản chất của Angular là một trong những Framework Front End, mà Front end này thường vốn không thể bảo mật 
+bằng Back-end. Chính vì vậy, khi sử dụng API thì bạn cần xây dựng cho một hệ thống kiểm tra dữ liệu sao cho việc trả về được tốt nhất. 
+ +Với một số trình duyệt sở hữu tính năng Disable JavaScript nên có nghĩa là website sẽ không hoàn toàn có thể sử dụng được dựa trên những 
+trình duyệt đó nữa .
+ + Bạn nên viết mã ứng dụng Angular bằng TypeScript, vì vậy bạn phải học TypeScript.
+
+	Angular CLI là một công cụ được phát triển đề chạy trên giao diện cửa sổ ứng dụng (command line interface hay CLI) nhằm giúp đỡ 
+việc tạo dự án, quản lý tập tin trong dự án và thực hiện nhiều tác vụ khác nhau như test (kiểm thử), bundle và deploy dự án một cách nhanh 
+chóng và hiệu quả.
+	Cài đặt và cấu hình typescript (ngôn ngữ dùng để lập trình angular), cuối cùng là cài đặt các thư viện liên quan đến việc testing
+ cho dự án angular. Khi chạy lệnh ng server sẽ biên dịch dự án angular và Webpack server để triển khai code Angular lên server. WebPack 
+chạy với port 4200.
+	Directive là một khái niệm trong Angular Framework, nó là những thành phần mở rộng cho các thẻ html dùng bổ trợ các thuộc tính nâng 
+cao cho các thẻ html.
+	Template là một dạng HTML cho Angular biết cách hiển thị component
+	
+	Kiến trúc của angular dựa trên 4 khái niệm cốt lõi:
+ +Component: là cốt lõi của kiến trúc angular frame work.Component là khổi xây dựng của mọi ứng dụng angular.Mọi ứng dụng angular đều được tạo thành
+từ 1 hoặc nhiều component.Về cơ bản nó là  một lớp Typescript thuần tuý cùng với 1 template HTML.
+ +Template với Data binding  và Directive: teamplate bao gồm tất cả tính năng của HTML và cung cấp chức năng bổ sung để liên kết dữ liệu 
+từ component vào HTML. Data binding được sử dụng để liên kết component với template. Diriective dùng để thêm các logic phức tạp.
+ +Module: về cơ bản là một tập hợp các tính năng/ chức năng liên quan.Module nhóm nhiều component và service vào 1 ngữ cảnh duy nhất.
+ +Service và Dependency Injection: service là lớp typescript đơn giản cung cấp 1 chức năng rất cụ thể.Thay vì viết một chức năng bên trong 1 component
+thì viết tách nó thành 1 service sẽ làm cho nó được tái sử dụng trong 1 component khác. Dependency Injection được sử dụng để khởi tạo service 
+đúng các trong component, giúp truy cập các service cần thiết mà ko cần thiết lập nào khác.
+
+	NgModule: 1 ứng dụng angular được chia làm niều module khác nhau dùng để xử lý các chức năng khác nhau, mỗi 1 module có thể được xem là 1 thư viện
+trong angular và được import khi cần sử dụng.Nó được gọi là ngModule.
+
+	+Component: là cốt lõi của kiến trúc angular frame work.Component là khổi xây dựng của mọi ứng dụng angular.Mọi ứng dụng angular đều được tạo thành
+từ 1 hoặc nhiều component.Về cơ bản nó là  một lớp Typescript thuần tuý cùng với 1 template HTML. Các thành phần chính: Typescript,template HTML và CSS.
+	+chuyển Ts--> JS: tcs ten_file.ts
+	+vòng đời của component: 
+  -Contructor: khởi tạo component
+  -ngOnchanges: xảy ra nếu có data truyền từ component cha sang con qua @Input.
+  -ngOninit: được gọi khi component được tạo ra lần đầu tiên.
+  -ngDoCheck: được gọi khi có sự thay đổi dữ liệu xảy ra trong component.
+  -ngOnDestroy: được gọi khi component bị huỷ. 
+	+Pipe là thành phần của Angular nhằm thay đổi cách hiển thị dữ liệu: titlecase, datecase,currencycase,decimal.
+
+	+Observable:
+  -Có khả năng trả về nhiều kết quả
+  -Có khả năng retry.
+  -Có khả năng huỷ request
+  -Có khả năng tiền xử lí kết quả thông qua các hàm như filter,map,find.... Promise ko có các khả năng ở trên, chỉ có ưu điểm duy nhất là code nhiều 
+hơn cho lên trình.
+	
+	-AOT Nó biên dịch tất cả các mã tại thời điểm xây dựng ứng dụng. Vì vậy, trình duyệt không muốn tải xuống trình biên dịch và biên dịch mã. 
+Trong phương thức này, trình duyệt có thể dễ dàng kết xuất ứng dụng bằng cách tải mã đã được biên dịch. Có thể sử dụng trong môi trường sản xuất.
+	-Ưu điểm của AOT:
+   -Khởi động nhanh hơn.
+   -Các code được kiểm tra trong quá trình phát triển.
+   -Kích thước file nhỏ hơn.
+
+ 	- FrontEnd là phần hiển thị ra bên ngoài giao diện và tương tác với người dùng. Vì vậy, nó chú trọng vào mặt trực quan, thẩm mỹ và bố cục dễ sử dụng.
+ Còn BackEnd là những công việc liên quan đến phần cơ sở dữ liệu lưu trữ bên trong để hiển thị cho máy chủ
+
+	-Cách cài đặt typescript:
+  -Cài nodejs.
+  -Cài Git Bash.
+  -Kiểm tra version.
+  -npm install -g typescript
+
+	-Typescript hỗ trợ cho chúng ta 3 loại vòng lặp for là forloop, for of loop và for in loop.(while,dowhile).
+
+	-Chúng ta sử dụng ngFor để duyệt qua các tập hợp dữ liệu như array, list. Sau đó ta tạo các thành phần web tương ứng với mỗi vòng lặp.
+	-Chúng ta sử dụng ngIf để xóa hoặc thêm một phần tử trên web dựa vào điều kiện có thoả mãn hay không.
+
+	-2 cách tạo form trong angular:
+  +Tạo form từ template và binding đến file.ts để xử lý.
+  +Tạo form từ file.ts và binding lên Template.
+	-Router là thành phàn dùng để xác định component nào sẽ được gọi
+	-Sử dụng Activated Router để lấy tham số trên URL.
+
+	-Lazy Loading được hiểu nôm na chính là việc load dữ liệu khi bạn cần sử dụng đến chúng. Ví dụ như khi nhiều người cùng vào 1 page sẽ không kéo 
+xuống hết đến cuối trang để đọc nội dung thì điều bạn cần làm là load nội dung trước. Tức là kéo tới đâu load nội dung tới đó.
+
